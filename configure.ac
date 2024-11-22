@@ -34,6 +34,8 @@ AC_PATH_PROG([OCAMLBUILD],[ocamlbuild],[:])
 # Handle a mismatch in available function btw 4.02 and 4.04
 if (test $"$major" -eq 4 -a "$minor" -gt 2); then
    AC_SUBST(UPPERCASEFUN, "String.uppercase_ascii")
+elif (test "$major" -ge 5 ); then
+   AC_SUBST(UPPERCASEFUN, "String.uppercase_ascii")
 else
    AC_SUBST(UPPERCASEFUN, "String.uppercase")
 fi
